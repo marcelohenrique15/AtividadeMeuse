@@ -1,0 +1,38 @@
+//Marcelo Henrique, Welton Félix e Fábio Papais.
+package atividademeusecatanota;
+
+import javax.swing.JOptionPane;
+
+public class Questao1cap4 {
+
+    public static void main(String[] args) {
+        float N1;              // Aqui foram criadas as variáveis que serão utilizadas no decorrer do programa.
+        float N2;
+        float N3;
+        float media;
+
+        N1 = Float.valueOf(JOptionPane.showInputDialog(null, "Insira a nota do seu Trabalho de Laboratório:"));  // Aqui foram atribuidos valores digitados como entrada para as variáveis criadas.
+        N2 = Float.valueOf(JOptionPane.showInputDialog(null, "Insira a nota da sua Avaliação Semestral:"));
+        N3 = Float.valueOf(JOptionPane.showInputDialog(null, "Insira a nota do seu Exame Final:"));
+
+        media = (N1 * 2 + N2 * 3 + N3 * 5) / 10;    // Essa é a fórmula utilizada para calcular a média.
+        if (media >= 0) {
+            JOptionPane.showMessageDialog(null, "Sua média é " + media);   // Aqui será aberta uma caixa de diálogo apresentando a média calculada.
+
+            if (media >= 8 && media <= 10) {   // Aqui foram criados parâmetros para classificar a média calculada.
+                JOptionPane.showMessageDialog(null, "Sua classificação é A.");
+            } else if (media >= 7 && media < 8) {
+                JOptionPane.showMessageDialog(null, "Sua classificação é B.");
+            } else if (media >= 6 && media < 7) {
+                JOptionPane.showMessageDialog(null, "Sua classificação é C.");
+            } else if (media >= 5 && media < 6) {
+                JOptionPane.showMessageDialog(null, "Sua classificação é D.");
+            } else if (media >= 0 && media < 5) {
+                JOptionPane.showMessageDialog(null, "Sua classificação é E.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Digite notas válidas.");
+        }
+    }
+
+}
